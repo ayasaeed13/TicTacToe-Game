@@ -1,0 +1,33 @@
+.container{
+    background-color: black;
+    color: #fff;
+    width:50%;
+}
+#title{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+#squares div {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #063a10 3px solid;
+    height: 80px;
+    font-size: 45px;
+}
+#squares div:hover{
+    background-color:#fff;
+    color: #000;
+
+}
+@media screen and (max-width:600px) {
+ .container{
+    width: 100%;
+ }   
+ #title{
+    font-size: 16px;
+ }
+
+}
