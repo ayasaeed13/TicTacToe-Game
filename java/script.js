@@ -15,11 +15,11 @@ function onGame(id){
         turn ="x"
         title.innerHTML ="x - Turn"
     }
-    winner();
+    win();
     isDrawn();
 }
 // win case
-let winner = function() {
+function win(){
     for (let i = 1; i < 10; i++) {
         squares[i]= document.getElementById(`item${i}`).innerHTML; 
      }  
@@ -46,9 +46,7 @@ let winner = function() {
      }
      if(squares[3] == squares[5] && squares[5] == squares[7] && squares[3] !=""){
          end(3,5,7)
-     }else{
-        return false;
-     }
+     } 
 }
 // end game
 function end(num1,num2,num3){
@@ -61,9 +59,10 @@ function end(num1,num2,num3){
 }
 function isDrawn(){
     let filteredSquares = squares.filter((age) => age != "")
-    if(filteredSquares.length == 9 && winner == false){
+    if(filteredSquares.length == 9){
         title.innerHTML=`OOPS !! Game is drawn`
         setInterval(function(){title.innerHTML =" loading new game ... "},1500)
         setTimeout(function(){location.reload()},2000)
     }
 }
+// win and draw call back functions win function comes first then isDrawn function
